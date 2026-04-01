@@ -9,7 +9,7 @@
 The **Employee Task Management Dashboard** is a role-based task management web application built with **React**, **Redux Toolkit (RTK)**, and **Local Storage persistence**.
 It allows **Managers** to create and assign tasks while **Employees** can track, complete, and manage their assigned work efficiently.
 
-The application implements secure **email & password authentication**, **role-based access control**, and centralized **state management using Redux Toolkit**, making it scalable and maintainable.
+The application implements secure **email & password authentication**, **role-based access control**, and centralized **state management using Redux Toolkitdd**, making it scalable and maintainable.
 
 ---
 
