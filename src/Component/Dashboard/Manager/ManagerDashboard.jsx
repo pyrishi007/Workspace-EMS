@@ -1,4 +1,5 @@
 import ManagerBoards from "./ManagerBoards";
+import ManagerTaskPanel from "./ManagerTaskPanel";
 
 const ManagerDashboard = ({ setUser, userData }) => {
   return (

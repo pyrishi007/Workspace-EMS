@@ -1,4 +1,5 @@
 # Role-Based Employee Task Management System
+
 ## 📌 Overview
 
 The **Employee Task Management Dashboard** is a role-based task management web application built with **React**, **Redux Toolkit (RTK)**, and **Local Storage persistence**.
@@ -12,46 +13,45 @@ The application implements secure **email & password authentication**, **role-ba
 
 ### 🔐 Authentication
 
-* Email & Password based login system
-* Role-based login access (Manager / Employee)
-* Persistent login using Local Storage
+- Email & Password based login system
+- Role-based login access (Manager / Employee)
+- Persistent login using Local Storage
 
 ### 👨‍💼 Manager Capabilities
 
-* Create tasks
-* Assign tasks to employees
-* View all assigned tasks
-* Monitor employee progress
+- Create tasks
+- Assign tasks to employees
+- View all assigned tasks
+- Monitor employee progress
 
 ### 👨‍🔧 Employee Capabilities
 
-* View assigned tasks
-* Mark tasks as completed
-* Delete tasks
-* Track task status
+- View assigned tasks
+- Mark tasks as completed
+- Delete tasks
+- Track task status
 
 ### 🧠 State Management
 
-* Redux Toolkit (RTK) used for centralized state management
-* Clean slice-based architecture
+- Redux Toolkit (RTK) used for centralized state management
+- Clean slice-based architecture
 
 ### 💾 Storage
 
-* Local Storage used as a **single source of truth** for session persistence
+- Local Storage used as a **single source of truth** for session persistence
 
 ---
 
 ## 🏗️ Tech Stack
 
-* React (Vite)
-* Redux Toolkit (RTK)
-* JavaScript (ES6+)
-* tailwind
-* Local Storage
-* Tostify
-* Firebase
-* ..and lots more
-
+- React (Vite)
+- Redux Toolkit (RTK)
+- JavaScript (ES6+)
+- tailwind
+- Local Storage
+- Tostify
+- Firebase
+- ..and lots more
 
 ---
 
@@ -139,12 +139,12 @@ npm run dev
 
 ## 🎯 Future Improvements
 
-* Backend integration (Node.js / Firebase)
-* JWT authentication
-* Task deadlines & reminders
-* Notifications system
-* Role-based route protection
-* API-based persistent storage
+- Backend integration (Node.js / Firebase)
+- JWT authentication
+- Task deadlines & reminders
+- Notifications system
+- Role-based route protection
+- API-based persistent storage
 
 ---
 

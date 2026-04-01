@@ -1,4 +1,5 @@
 import { toast } from "react-toastify";
+import { signInandUpTostify } from "./tostify";
 
 const setLocalStorangeUser = (
   userFullname, //username
@@ -26,27 +27,16 @@ const setLocalStorangeUser = (
 
   if (userData.find((e) => e.userEmail === userEmail)) {
     handleUser(userEmail, userPassword, userType);
-    toast.success(`${userFullname}, welcome back`, {
-      position: "top-center",
-      autoClose: 2500,
-      hideProgressBar: true,
-      closeButton: false,
-      style: {
-        background: "linear-gradient(135deg, #000000, #1a1a1a)",
-        color: "#ffffff",
-        borderRadius: "14px",
-        padding: "14px 18px",
-        fontWeight: "500",
-        boxShadow: "0px 6px 24px rgba(0,0,0,0.35)",
-        letterSpacing: "0.3px",
-      },
-    });
+    toast.success(`${userFullname}, welcome back`, signInandUpTostify);
     return;
   } else {
     userData.push(userValue); // append user
     localStorage.setItem(userType, JSON.stringify(userData)); //SetUser
     handleUser(userEmail, userPassword, userType);
-    alert(`Welocme ${userFullname}`);
+    toast.success(
+      `${userFullname}, Successfully registered`,
+      signInandUpTostify,
+    );
   }
 };
 

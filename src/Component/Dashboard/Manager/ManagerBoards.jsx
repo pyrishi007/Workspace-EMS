@@ -1,5 +1,6 @@
 import HeroSecton from "../common/HeroSecton";
 import Sidebar from "../common/Sidebar";
+import ManagerTaskPanel from "./ManagerTaskPanel";
 
 const ManagerBoards = ({ setUser, userData }) => {
   console.log(userData);
@@ -10,6 +11,12 @@ const ManagerBoards = ({ setUser, userData }) => {
 
       <div className="flex-1 m-8 min-w-0">
         <HeroSecton userData={userData} />
+
+        <div className="h-px mb-8 border border-gray-400/20 mx-30"></div>
+
+        <ManagerTaskPanel />
+
+        
       </div>
     </div>
   );
