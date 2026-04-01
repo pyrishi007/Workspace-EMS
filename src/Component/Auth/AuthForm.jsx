@@ -8,6 +8,7 @@ const AuthForm = ({ handleUser }) => {
   const [userEmail, setUserEmail] = useState("");
   const [userType, setUserType] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [use, setuse] = useState("")
 
   const handleForm = () => {
     // localStorage.clear()
