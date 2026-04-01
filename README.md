@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 # Employee Task Management Dashboard (React + Redux Toolkit)
 
+=======
+# Role-Based Employee Task Management System
+>>>>>>> 51e2ef2 (Updated Readme)
 ## 📌 Overview
 
 The **Employee Task Management Dashboard** is a role-based task management web application built with **React**, **Redux Toolkit (RTK)**, and **Local Storage persistence**.
@@ -47,8 +51,17 @@ The application implements secure **email & password authentication**, **role-ba
 * React (Vite)
 * Redux Toolkit (RTK)
 * JavaScript (ES6+)
+<<<<<<< HEAD
 * CSS
 * Local Storage
+=======
+* tailwind
+* Local Storage
+* Tostify
+* Firebase
+* ..and lots more
+
+>>>>>>> 51e2ef2 (Updated Readme)
 
 ---
 
