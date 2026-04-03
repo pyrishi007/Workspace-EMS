@@ -1,19 +1,45 @@
 import { useState } from "react";
+import { getTaskData } from "../../../utils/getTaskData";
+import { useDispatch } from "react-redux";
+import { addTask } from "../../../store/slices/taskSlice,js";
 
-const CreateTask = ({ managerEmail }) => {
+const CreateTask = ({ userData }) => {
   const [taskTitle, setTaskTitle] = useState("");
   const [taskDescription, setTaskDescription] = useState("");
   const [assignedTo, setAssignedTo] = useState("");
-  const [assignedBy] = useState(managerEmail);
+  const [assignedBy] = useState(userData.userEmail);
   const [status] = useState("pending");
   const [priority, setPriority] = useState("medium");
   const [deadline, setDeadline] = useState("");
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
   };
+  const handleTask = () => {
+    const task = {
+      taskTitle: taskTitle,
+      taskDescription: taskDescription,
+      assignedTo: assignedTo,
+      assignedBy: assignedBy,
+      deadline: deadline,
+      priority: priority,
+      status: status,
+    };
 
+    //Assigned task to backend[LS]
+    getTaskData(task);
 
+    const listAlltask = JSON.parse(localStorage.getItem("allTask"));
+    dispatch(addTask(alltaskLS));
+
+    //Resetin values
+    setTaskTitle("");
+    setTaskDescription("");
+    setAssignedTo("");
+    setPriority("");
+    setDeadline("");
+  };
 
   return (
     <div className="flex items-center justify-center">
@@ -36,6 +62,10 @@ const CreateTask = ({ managerEmail }) => {
               Task Title
             </label>
             <input
+              value={taskTitle}
+              onChange={(e) => {
+                setTaskTitle(e.target.value);
+              }}
               type="text"
               placeholder="Enter task title"
               className="w-full border border-gray-200 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none transition"
@@ -49,6 +79,10 @@ const CreateTask = ({ managerEmail }) => {
               Task Description
             </label>
             <textarea
+              value={taskDescription}
+              onChange={(e) => {
+                setTaskDescription(e.target.value);
+              }}
               rows="4"
               placeholder="Describe task objectives..."
               className="w-full border border-gray-200 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none transition"
@@ -59,10 +93,15 @@ const CreateTask = ({ managerEmail }) => {
           {/* Assign Email */}
           <div>
             <label className="block text-sm font-medium text-gray-600 mb-1">
-              Assign To (Employee Email)
+              Assign To
             </label>
             <input
+              value={assignedTo}
+              onChange={(e) => {
+                setAssignedTo(e.target.value);
+              }}
               type="email"
+              placeholder="Employee Email"
               className="w-full border border-gray-200 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none transition"
               required
             />
@@ -76,6 +115,10 @@ const CreateTask = ({ managerEmail }) => {
                 Priority Level
               </label>
               <select
+                value={priority}
+                onChange={(e) => {
+                  setPriority(e.target.value);
+                }}
                 className="w-full border border-gray-200 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none transition"
               >
                 <option value="low">Low Priority</option>
@@ -90,6 +133,10 @@ const CreateTask = ({ managerEmail }) => {
                 Deadline
               </label>
               <input
+                value={deadline}
+                onChange={(e) => {
+                  setDeadline(e.target.value);
+                }}
                 type="date"
                 className="w-full border border-gray-200 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none transition"
                 required
@@ -99,6 +146,7 @@ const CreateTask = ({ managerEmail }) => {
 
           {/* Submit Button */}
           <button
+            onClick={handleTask}
             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 rounded-lg shadow-sm transition duration-200"
           >
             Assign Task

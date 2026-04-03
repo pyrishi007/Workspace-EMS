@@ -40,6 +40,19 @@ The application implements secure **email & password authentication**, **role-ba
 
 - Local Storage used as a **single source of truth** for session persistence
 
+### State Presistance
+
+- In this project, state persistence is implemented to manage authentication data efficiently. After an employee logs in, their authentication details are stored persistently so the session remains active even if the browser tab is refreshed or temporarily closed.
+
+Because of this persistence mechanism:
+
+The logged-in employee’s data remains available throughout the session.
+Users do not need to log in again after refreshing the page.
+The application can restore authentication state automatically.
+User session information can be accessed anytime while the session is valid.
+
+This improves user experience by maintaining seamless access and preventing unnecessary repeated logins.
+
 ---
 
 ## 🏗️ Tech Stack

@@ -1,7 +1,10 @@
 import CreateTask from "./CreateTask";
 import AssignedTo from "./AssignedTo";
 
-const ManagerTaskPanel = () => {
+const ManagerTaskPanel = ({ userData }) => {
+
+
+
   return (
     <div className="mt-10 flex flex-col items-center">
       <h1 className="text-center font-bold text-3xl text-blue-600">
@@ -14,7 +17,7 @@ const ManagerTaskPanel = () => {
 
       <div className="grid grid-cols-[700px_550px] mt-5 gap-20">
         <div className="flex flex-col">
-          <CreateTask />
+          <CreateTask  userData={userData} />
         </div>
         <div className="">
           <AssignedTo />

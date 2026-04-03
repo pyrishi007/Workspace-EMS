@@ -1,4 +1,9 @@
-const EmpTaskPanel = () => {
+import { getuserSpecifictask } from "../../../utils/getuserSpecifictask";
+
+const EmpTaskPanel = ({ userData }) => {
+
+  const eachUserBasedTask = getuserSpecifictask(userData.userEmail);
+
   return (
     <div className="mb-16 ">
       <h1 className="  text-center font-bold text-3xl text-blue-600">
@@ -17,7 +22,7 @@ const EmpTaskPanel = () => {
             <div className="w-3 h-3 bg-green-600 rounded-full"></div>
           </div>
           <div className="flex font-mono justify-between px-8 py-5 items-center">
-            <h1 className="font-extrabold text-blue-700 text-3xl">10</h1>
+            <h1 className="font-extrabold text-blue-700 text-3xl">{eachUserBasedTask.length}</h1>
             <p>Pending tasks</p>
           </div>
         </div>

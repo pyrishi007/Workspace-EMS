@@ -14,9 +14,7 @@ const ManagerBoards = ({ setUser, userData }) => {
 
         <div className="h-px mb-8 border border-gray-400/20 mx-30"></div>
 
-        <ManagerTaskPanel />
-
-        
+        <ManagerTaskPanel userData={userData} />
       </div>
     </div>
   );
